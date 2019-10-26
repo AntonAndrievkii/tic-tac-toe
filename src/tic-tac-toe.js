@@ -3,7 +3,7 @@ class TicTacToe {
   // Init current symbol which must play, field and end of the game
 
   constructor() {
-    this.currentSymbol = "x";
+    this.currentSymbol_one = "x";
     this.field = [[null, null, null], [null, null, null], [null, null, null]];
     this.endGame = 'notEnd';
   }
@@ -11,21 +11,21 @@ class TicTacToe {
   // return current symbol
 
   getCurrentPlayerSymbol() {
-    return this.currentSymbol;
+    return this.currentSymbol_one;
   }
 
   // function which change symbol to opposite state
 
   changePlayerSymbol() {
-    return this.currentSymbol === "x" ? "o" : "x";
+    return this.currentSymbol_one === "x" ? "o" : "x";
   }
 
   // If Init state empty(null) --> change field state to current symbol
 
   nextTurn(rowIndex, columnIndex) {
     if (this.field[rowIndex][columnIndex] === null) {
-      this.field[rowIndex][columnIndex] = this.currentSymbol;
-      this.currentSymbol = this.changePlayerSymbol();
+      this.field[rowIndex][columnIndex] = this.currentSymbol_one;
+      this.currentSymbol_one = this.changePlayerSymbol();
     }
   }
 
